@@ -1,0 +1,17 @@
+{
+  "name": "lessoncostruct",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  }
+}
