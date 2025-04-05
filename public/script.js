@@ -48,7 +48,6 @@ async function getWeather() {
         if (data.error) {
             resultDiv.innerHTML = `<p class="weather__error"><i class="fas fa-exclamation-circle"></i> ${data.error}</p>`;
         } else {
-            // Выбираем иконку в зависимости от описания погоды
             const weatherIcon = getWeatherIcon(data.description.toLowerCase());
             
             resultDiv.innerHTML = `
@@ -60,9 +59,17 @@ async function getWeather() {
                     <i class="fas fa-temperature-high"></i>
                     Температура: ${data.temperature}°C
                 </p>
+                <p class="weather__feels-like">
+                    <i class="fas fa-thermometer-half"></i>
+                    Ощущается как: ${data.feels_like}°C
+                </p>
                 <p class="weather__desc">
                     <i class="fas fa-info-circle"></i>
                     Описание: ${data.description}
+                </p>
+                <p class="weather__pressure">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    Давление: ${data.pressure} гПа
                 </p>
                 <p class="weather__humidity">
                     <i class="fas fa-tint"></i>

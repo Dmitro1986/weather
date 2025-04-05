@@ -22,17 +22,19 @@ app.get('/weather', async (req, res) => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ru`;
     const response = await axios.get(url);
     const weatherData = response.data;
-    console.log(weatherData);
     
-
     res.json({
       city: weatherData.name,
-      temperature: weatherData.main.temp,
+      temperature: Math.round(weatherData.main.temp), // округляем температуру
       description: weatherData.weather[0].description,
       humidity: weatherData.main.humidity,
       windSpeed: weatherData.wind.speed,
+      feels_like: Math.round(weatherData.main.feels_like), // добавляем ощущаемую температуру
+      pressure: weatherData.main.pressure, // добавляем давление
+      icon: weatherData.weather[0].icon // добавляем код иконки погоды
     });
   } catch (error) {
+    console.error('Ошибка:', error.response?.data || error.message);
     res.status(500).json({ error: 'Ошибка получения данных о погоде' });
   }
 });
