@@ -4,18 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Прогноз погоды</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="page">
   <div class="weather">
-    <h1 class="weather__title">Прогноз погоды</h1>
+    <h1 class="weather__title">
+      <i class="weather__icon fas fa-cloud-sun"></i>
+      Прогноз погоды
+    </h1>
     <div class="weather__search">
       <input type="text" class="weather__input" placeholder="Введите город">
-      <button class="weather__clear" type="button">✕</button>
+      <button class="weather__clear" type="button">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
-    <button class="weather__submit" type="button">Узнать погоду</button>
+    <button class="weather__submit" type="button">
+      <i class="fas fa-search"></i>
+      Узнать погоду
+    </button>
     <div class="weather__result"></div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
